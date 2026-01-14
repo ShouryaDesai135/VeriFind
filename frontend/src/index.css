@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CampusFind - Modern Minimalistic Design System
+   Clean slate/charcoal tones with teal accent
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Background & Surfaces */
+    --background: 0 0% 99%;
+    --foreground: 220 20% 10%;
+
+    /* Card surfaces with subtle depth */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    /* Primary - Soft Teal Accent */
+    --primary: 174 62% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Light gray surface */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 10%;
+
+    /* Muted - Subtle backgrounds */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 50%;
+
+    /* Accent - Highlight areas */
+    --accent: 174 62% 95%;
+    --accent-foreground: 174 62% 35%;
+
+    /* Destructive - Error/warning */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success - Confirmations */
+    --success: 152 69% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Pending states */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 174 62% 47%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 10% 30%;
+    --sidebar-primary: 174 62% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 174 62% 47%;
+  }
+
+  .dark {
+    /* Dark mode - Charcoal tones */
+    --background: 220 20% 8%;
+    --foreground: 220 14% 96%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 220 14% 96%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 220 14% 96%;
+
+    --primary: 174 62% 50%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 220 14% 96%;
+
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 174 62% 20%;
+    --accent-foreground: 174 62% 70%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 69% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 45%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 174 62% 50%;
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 220 14% 96%;
+    --sidebar-primary: 174 62% 50%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 20% 16%;
+    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 174 62% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Smooth page transitions */
+@layer utilities {
+  .page-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 ease-out hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-press {
+    @apply transition-transform duration-100 active:scale-[0.98];
+  }
+
+  /* Safe area padding for mobile */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Custom scrollbar */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
