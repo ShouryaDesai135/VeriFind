@@ -11,3 +11,10 @@ backend/.env
 
 # Logs
 *.log
+
+# Google credentials
+serviceAccount.json
+backend/serviceAccount.json
+
+*.zip
+
